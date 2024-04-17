@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    
+
+    <title>Cameras</title>
+    <style> 
+       div.horizontal { 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+        } 
+      
+        /* Style to create a horizontal list */ 
+        ul.horizontal-list { 
+          list-style-type: none; 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+        } 
+      
+        ul.horizontal-list li { 
+          margin-right: 10px; 
+        } 
+      </style> 
+</head>
+<body>
+    <div>
+    <ul class="horizontal-list">
+        <li><a href="index.html">Home<li>
+        <li><a href="AddCamera.html">Cameras<li>
+        <li><a href="Configure">Configuration<i>
+        
+    </ul>
+</div>
+
+<div class="horizontal">
+
+    {% for n in camera %}
+    <div  style="border: 2px;" >
+            <h3 class="mt-5">camera[n]</h3>
+            <img src="{{ url_for('video_feed', list_id=n) }}" width="100%">
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
